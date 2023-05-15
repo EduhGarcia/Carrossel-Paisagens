@@ -1,0 +1,56 @@
+const setaAvancar = document.getElementById("seta-avancar")
+const setaVoltar = document.getElementById("seta-voltar")
+const imagens = document.querySelectorAll(".slide")
+
+let imagemAtual = 0
+
+setaAvancar.addEventListener('click', function (){
+    if(imagemAtual === imagens.length - 1)
+        return;
+
+    imagemAtual++
+
+    esconderImagem()
+    mostrarImagem()
+    mostrarOuEsconderSetas()
+    
+    
+})
+
+setaVoltar.addEventListener('click', function (){
+    if(imagemAtual === 0)
+        return;
+
+    imagemAtual--
+
+    esconderImagem()
+    mostrarImagem()
+    mostrarOuEsconderSetas()
+})
+
+function esconderImagem(){
+    const imagem = document.querySelector(".mostrar")
+    imagem.classList.remove("mostrar")
+}
+
+function mostrarImagem(){
+    imagens[imagemAtual].classList.add("mostrar")
+}
+
+function mostrarOuEsconderSetas(){
+    const naoEhAPrimeiraImagem = imagemAtual !== 0
+    if(naoEhAPrimeiraImagem){
+        setaVoltar.classList.remove("opacidade");
+    }else{
+        setaVoltar.classList.add("opacidade");
+    }
+
+    const chegouNaUltimaImagem = imagemAtual !== 0 && imagemAtual === imagens.length - 1
+    if(chegouNaUltimaImagem){
+        setaAvancar.classList.add("opacidade")
+    }else{
+        setaAvancar.classList.remove("opacidade")
+    }
+}
+
+

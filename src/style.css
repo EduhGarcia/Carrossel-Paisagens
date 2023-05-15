@@ -1,0 +1,102 @@
+.imagens-slider{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.imagens-slider .slide{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.imagens-slider .slide.mostrar{
+    opacity: 1;
+}
+
+.slide-rosa{
+    background-image: url(imagens/slide-rosa.png);
+}
+
+.slide-verde{
+    background-image: url(imagens/slide-verde.png);
+}
+
+.slide-laranja{
+    background-image: url(imagens/slide-laranja.png);
+}
+
+.slide-azul{
+    background-image: url(imagens/slide-azul.png);
+}
+
+.seta-avancar, .seta-voltar{
+    position: absolute;
+    z-index: 1;
+}
+
+.seta-voltar{
+    left: 2%;
+    transform: rotateY(180deg);
+}
+
+.seta-avancar{
+    right: 2%;
+}
+
+.opacidade{
+    opacity: 0.6;
+    cursor: default;
+}
+
+.conteudo{
+    background-color: #fff;
+    margin-left: 180px;
+    padding: 65px 60px;
+    width: 620px;
+    border-radius: 10px;
+}
+
+.conteudo .titulo{
+    font-size: 5rem;
+    margin-bottom: 80px;
+    font-weight: 400;
+}
+
+.conteudo .texto{
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.conteudo .botao{
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.botao.rosa{
+    color: #c50000;
+}
+
+.botao.verde{
+    color: #D9DD10;
+}
+
+.botao.laranja{
+    color: #A63A17;
+}
+
+.botao.azul{
+    color: #10ACDD;
+}
+
+
